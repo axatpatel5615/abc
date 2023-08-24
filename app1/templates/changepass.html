@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Change Password form</title>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+        <div class="logo">
+            <a class="brand-logo" href="">Change Password form</a>
+        </div>
+        <!-- main content -->
+            <div class="row map-content-9">
+                <div class="info-grids">
+                    <form method="post" class="">
+                    {% csrf_token %}
+                        <div class="form-grid">
+                            <div class="input-field">
+                                <label> Old Password</label>
+                                <input type="password" name="oldpass" id="email" placeholder="Old password" required="">
+                            </div>
+                            <div class="input-field">
+                                <label>New Password</label>
+                                <input type="password" name="password" id="Password"  placeholder=" New Password" required="">
+                            </div>
+                            <div class="input-field">
+                                <label>Confirm Password</label>
+                                <input type="password" name="password1" id="Password" placeholder="Confirm Password" required="">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-style">Update now</button>
+                    </form>
+                </div>
+               
+            </div>
+       
+    </div>
+
+{% if m %}
+<script>alert("{{m}}")</script>
+{% endif %}
+
+</body>
+
+</html>
+{% endblock %}
